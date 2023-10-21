@@ -1,0 +1,87 @@
+body {
+    background-color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+}
+h3 {
+    color: #fa1414;
+}
+
+.sound-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.sound-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.sound-button:hover {
+    background-color: #1c6ea4;
+}
+
+#mute-button {
+    background-color: #e74c3c;
+}
+
+#mute-button:hover {
+    background-color: #c0392b;
+}
+
+#audio {
+    display: none;
+}
+
+#volume-control {
+    transform: rotate(-90deg);
+    position: fixed;
+    right: 2px;
+    top: 160px;
+}
+
+label {
+    position: fixed;
+    right: 30px;
+    top: 85px;
+    color: #fff; /* Cor do texto da legenda */
+}
+
+#volume-label {
+    position: fixed;
+    right: 50px;
+    top: 150px;
+    color: #fff; /* Cor do texto que exibe o valor do controle de volume */
+}
+.info-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d61717;
+    color: #fff;
+    padding: 10px;
+}
+
+.info-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.info-text {
+    font-size: 16px; }

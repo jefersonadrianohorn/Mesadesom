@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <title>Mesa de som</title>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" href="ICONES/caixa de som.svg" type="image/x-icon">
+
+</head>
+<body>
+    <h1>Mesa de Som</h1>
+    <h3> Alto da barca do inferno</h3>
+
+    <div class="sound-buttons">
+        <button class="sound-button" onclick="playSound('som/intervalo.mp3')">
+            <svg width="50" height="50">
+                <image xlink:href="ICONES/som.svg" width="50" height="50" />
+            </svg>
+            Inicio/ intervalo
+
+        </button>
+        <button class="sound-button" onclick="playSound('som/anjo.mp3')">
+            <svg width="50" height="50">
+                <image xlink:href="ICONES/som.svg" width="50" height="50" />
+            </svg>
+            Anjo
+        </button>
+        <button class="sound-button" onclick="playSound('som/diabo.mp3')">
+            <svg width="50" height="50">
+                <image xlink:href="ICONES/som.svg" width="50" height="50" />
+            </svg>
+            
+            Diabo
+        </button>
+        
+        <button class="sound-button" onclick="playSound('som/final.mp3')">
+          
+            <svg width="50" height="50">
+                <image xlink:href="ICONES/som.svg" width="50" height="50" />
+            </svg>
+            Parodia final
+          
+        </button>
+        
+        <button class="sound-button" id="mute-button" onclick="muteAllSounds()">
+            <svg width="50" height="50">
+                <image xlink:href="ICONES/mute.svg" width="50" height="50" />
+            </svg>          Silenciar
+        </button>
+    </div>
+    <label for="volume-control">Controle de Volume:</label>
+    <input type="range" id="volume-control" min="0" max="100" step="1" value="100" oninput="setVolume()">
+    
+    <audio id="audio" controls></audio>
+
+    
+    <div class="footer">
+        <svg width="25" height="25">
+            <image xlink:href="ICONES/info.svg" width="25" height="25" />
+        </svg>
+        Softwere dessenvolvido por Jeferson adriano Horn
+    </div>
+    
+
+    <script>
+        const audio = document.getElementById('audio');
+        const volumeControl = document.getElementById('volume-control');
+
+        function playSound(soundFile) {
+            audio.src = soundFile;
+            audio.play();
+        }
+
+        function setVolume() {
+            audio.volume = volumeControl.value / 100;
+        }
+
+        function muteAllSounds() {
+            audio.pause();
+        }
+    </script>
+</body>
+</html>
